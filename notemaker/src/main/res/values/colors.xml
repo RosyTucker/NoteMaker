@@ -3,4 +3,5 @@
     <color name="button_normal">#FFDD33</color>
     <color name="button_pressed">#FFDD99</color>
     <color name="background">#FFFFFF</color>
+    <color name="action_bar">#33CC99</color>
 </resources>

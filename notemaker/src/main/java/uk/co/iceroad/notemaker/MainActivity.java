@@ -1,22 +1,21 @@
 package uk.co.iceroad.notemaker;
 
 import java.util.ArrayList;
+
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
+import android.view.*;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
     private ArrayList<String> noteList = new ArrayList<>();
     private ListView noteLayout;
     private EditText edit;
@@ -28,20 +27,13 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         noteLayout = (ListView)findViewById(R.id.listView1);
-        Button newNote = (Button)findViewById(R.id.newNote);
 
         load();
-        newNote.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-                showNewNoteDialog(0, false);
-            }
-        });
         update();
 
         noteLayout.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
-
                 showMenuDialog(position);
                 return true;
             }
@@ -150,7 +142,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View arg0) {
                 menuDialog.cancel();
                 menuDialog.dismiss();
-                showNewNoteDialog(position,true);
+                showNewNoteDialog(position, true);
             }
         });
     }
@@ -183,5 +175,21 @@ public class MainActivity extends ActionBarActivity {
                 R.layout.menuitem, R.id.item, noteList);
         noteLayout.setAdapter(adapter);
         save();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_add) {
+            showNewNoteDialog(0, false);
+            return true;
+        }
+        return false;
     }
 }
