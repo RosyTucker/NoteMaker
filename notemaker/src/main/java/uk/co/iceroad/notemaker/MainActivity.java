@@ -2,15 +2,11 @@ package uk.co.iceroad.notemaker;
 
 import java.util.ArrayList;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -21,7 +17,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
-    private ArrayList<String> noteList = new ArrayList<String>();
+    private ArrayList<String> noteList = new ArrayList<>();
     private ListView noteLayout;
     private EditText edit;
     private AlertDialog newNoteDialog;
@@ -37,15 +33,14 @@ public class MainActivity extends ActionBarActivity {
         load();
         newNote.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
-                showNewNoteDialog(0,false);
+                showNewNoteDialog(0, false);
             }
         });
         update();
 
         noteLayout.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
-            public boolean onItemLongClick(AdapterView<?> parent, View v, int position,long id)
-            {
+            public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
 
                 showMenuDialog(position);
                 return true;
@@ -63,8 +58,7 @@ public class MainActivity extends ActionBarActivity {
         for(int i = 0; i< noteList.size(); i++){
             editor.putString("note"+i, noteList.get(i));
         }
-        editor.commit();
-
+        editor.apply();
     }
 
     private void load() {
@@ -100,15 +94,15 @@ public class MainActivity extends ActionBarActivity {
         okButton.setOnClickListener(new OnClickListener() {
 
             public void onClick(View v) {
-                if(edit.getText().length()> 0){
-                    if(!isEdit){
-                        noteList.add(position,edit.getText().toString());
-                    }else{
-                        noteList.set(position,edit.getText().toString());
+                if (edit.getText().length() > 0) {
+                    if (!isEdit) {
+                        noteList.add(position, edit.getText().toString());
+                    } else {
+                        noteList.set(position, edit.getText().toString());
                     }
                     update();
                 }
-                if(newNoteDialog!= null){
+                if (newNoteDialog != null) {
                     newNoteDialog.cancel();
                     newNoteDialog.dismiss();
                 }
@@ -119,7 +113,7 @@ public class MainActivity extends ActionBarActivity {
 
             public void onClick(View arg0) {
                 edit.setText("");
-                if(newNoteDialog!= null){
+                if (newNoteDialog != null) {
                     newNoteDialog.cancel();
                     newNoteDialog.dismiss();
                 }
@@ -164,21 +158,16 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public void onDestroy(){
         super.onDestroy();
-        Log.d("dest","ON Destroy");
-        if(menuDialog!= null){
-            menuDialog.cancel();
-            menuDialog.dismiss();
-        }
-        if(newNoteDialog!= null){
-            newNoteDialog.cancel();
-            newNoteDialog.dismiss();
-        }
+        closeDialogs();
     }
 
     @Override
     public void onStop(){
         super.onStop();
-        Log.d("dest","ON Stop");
+        closeDialogs();
+    }
+
+    private void closeDialogs() {
         if(menuDialog!= null){
             menuDialog.cancel();
             menuDialog.dismiss();
@@ -189,37 +178,10 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    @Override
-    public void onPause(){
-        super.onPause();
-        Log.d("dest","ON Pause");
-    }
-
     private void update() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 R.layout.menuitem, R.id.item, noteList);
         noteLayout.setAdapter(adapter);
         save();
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menuoption, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()== R.id.options){
-            options();
-        }
-        return false;
-    }
-
-    private void options() {
-        Intent intent = new Intent(this, Setting.class);
-        startActivity(intent);
-    }
-
 }
