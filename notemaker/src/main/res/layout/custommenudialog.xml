@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/dia_root"
+    android:layout_width="fill_parent"
+     android:background="@color/background"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5" >
+
+    </LinearLayout>
+   
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+             android:background="@drawable/button"
+            android:text="Delete Note"
+            />
+         <Button
+            android:id="@+id/editButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5"
+             android:background="@drawable/button"
+            android:text="Edit Note"
+            />
+
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_weight="0.5" >
+         </LinearLayout>
+
+</LinearLayout>
