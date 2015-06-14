@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:background="@color/background"
+              android:background="@color/white"
               android:layout_height="wrap_content">
 
-    <TextView
+    <uk.co.iceroad.notemaker.CustomFontTextView
+            android:padding="5dip"
             android:id="@+id/noteTextView"
             android:layout_width="fill_parent"
+            android:background="@color/none"
             android:layout_height="wrap_content"
-            android:minLines="3"
-            android:textStyle="bold" />
+            android:minLines="3" />
 
 </LinearLayout>

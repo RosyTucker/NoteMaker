@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="button_normal">#FFDD33</color>
-    <color name="button_pressed">#FFDD99</color>
-    <color name="background">#FFFFFF</color>
-    <color name="action_bar">#33CC99</color>
     <color name="white">#FFFFFF</color>
-    <color name="destructive_button">#DD3322</color>
     <color name="none">#00ffffff</color>
+    <color name="teal">#00A0B0</color>
+    <color name="red">#CC333F</color>
+    <color name="darkRed">#ff99262f</color>
+    <color name="orange">#EB6841</color>
+    <color name="brown">#6A4A3C</color>
+    <color name="yellow">#EDC951</color>
+    <color name="darkYellow">#ffb38f50</color>
 </resources>

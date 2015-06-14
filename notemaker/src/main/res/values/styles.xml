@@ -5,6 +5,6 @@
 
     <style name="NoteMakerActionBar"
            parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@color/action_bar</item>
+        <item name="android:background">@color/teal</item>
     </style>
 </resources>
