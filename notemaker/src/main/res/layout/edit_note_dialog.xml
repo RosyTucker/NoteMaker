@@ -12,6 +12,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dip"
                 android:padding="5dip"
+                android:inputType="textMultiLine|textCapSentences" >
                 android:layout_alignParentTop="true"
                 android:background="@color/white"
                 android:inputType="textMultiLine">

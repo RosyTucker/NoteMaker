@@ -12,7 +12,7 @@
             android:layout_height="150dip"
             android:background="@color/white"
             android:layout_gravity="top"
-            android:inputType="textMultiLine" >
+            android:inputType="textMultiLine|textCapSentences" >
     </uk.co.iceroad.notemaker.CustomFontEditText>
 
     <LinearLayout
