@@ -11,6 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dip"
             android:background="@color/white"
+            android:textSize="@dimen/normalFontSize"
             android:layout_gravity="top"
             android:inputType="textMultiLine|textCapSentences" >
     </uk.co.iceroad.notemaker.CustomFontEditText>
@@ -27,6 +28,7 @@
                 android:layout_weight="0.5"
                 android:layout_marginEnd="2dip"
                 android:layout_marginRight="2dip"
+                android:textSize="@dimen/normalFontSize"
                 android:background="@drawable/yellow_button"
                 android:text="@string/cancel"
                 android:textColor="@color/white"
@@ -39,6 +41,7 @@
                 android:background="@drawable/yellow_button"
                 android:text="@string/save"
                 android:layout_weight="0.5"
+                android:textSize="@dimen/normalFontSize"
                 android:layout_marginStart="2dip"
                 android:layout_marginLeft="2dip"
                 android:textColor="@color/white"
