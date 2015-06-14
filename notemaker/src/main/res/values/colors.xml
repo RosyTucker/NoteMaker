@@ -4,4 +4,6 @@
     <color name="button_pressed">#FFDD99</color>
     <color name="background">#FFFFFF</color>
     <color name="action_bar">#33CC99</color>
+    <color name="white">#FFFFFF</color>
+    <color name="destructive_button">#DD3322</color>
 </resources>
