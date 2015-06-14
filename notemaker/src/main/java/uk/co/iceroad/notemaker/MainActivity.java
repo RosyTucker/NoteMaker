@@ -58,10 +58,10 @@ public class MainActivity extends Activity {
         newNoteDialog.show();
 
         final EditText noteEditText = (EditText) newNoteDialog.findViewById(R.id.noteEditText);
-        Button okButton =(Button) newNoteDialog.findViewById(R.id.okButton);
+        Button saveButton =(Button) newNoteDialog.findViewById(R.id.saveButton);
         Button cancelButton = (Button) newNoteDialog.findViewById(R.id.cancelButton);
 
-        okButton.setOnClickListener(new OnClickListener() {
+        saveButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 if (noteEditText.getText().length() > 0) {
                     noteList.add(0, noteEditText.getText().toString());

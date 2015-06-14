@@ -4,5 +4,5 @@
     <item android:id="@+id/action_add"
           android:icon="@android:drawable/ic_menu_add"
           android:showAsAction="always"
-          android:title="@string/add_note" />
+          android:title="@string/new_note" />
 </menu>
