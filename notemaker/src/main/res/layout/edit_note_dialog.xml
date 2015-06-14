@@ -12,6 +12,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dip"
                 android:padding="5dip"
+                android:textSize="@dimen/normalFontSize"
                 android:inputType="textMultiLine|textCapSentences" >
                 android:layout_alignParentTop="true"
                 android:background="@color/white"
@@ -33,6 +34,7 @@
                         android:layout_weight="0.5"
                         android:layout_marginEnd="2dip"
                         android:layout_marginRight="2dip"
+                        android:textSize="@dimen/normalFontSize"
                         android:background="@drawable/red_button"
                         android:text="@string/delete"
                         android:textColor="@color/white"
@@ -45,6 +47,7 @@
                         android:background="@drawable/yellow_button"
                         android:text="@string/save"
                         android:layout_weight="0.5"
+                        android:textSize="@dimen/normalFontSize"
                         android:layout_marginStart="2dip"
                         android:layout_marginLeft="2dip"
                         android:textColor="@color/white"
