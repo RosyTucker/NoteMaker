@@ -91,6 +91,7 @@ public class MainActivity extends Activity {
         Button cancelButton = (Button) editNoteDialog.findViewById(R.id.cancelButton);
 
         editText.setText(noteList.get(position));
+        editText.setSelection(editText.getText().length());
 
         editButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
