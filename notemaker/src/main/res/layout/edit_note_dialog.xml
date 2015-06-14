@@ -13,10 +13,9 @@
                 android:layout_height="150dip"
                 android:padding="5dip"
                 android:textSize="@dimen/normalFontSize"
-                android:inputType="textMultiLine|textCapSentences" >
+                android:inputType="textMultiLine|textCapSentences"
                 android:layout_alignParentTop="true"
-                android:background="@color/white"
-                android:inputType="textMultiLine">
+                android:background="@color/white">
         </uk.co.iceroad.notemaker.CustomFontEditText>
 
         <LinearLayout
@@ -56,13 +55,10 @@
 
         <Button
                 android:id="@+id/cancelButton"
-                android:layout_width="40dip"
-                android:layout_height="40dip"
-                android:layout_gravity="top"
-                android:text="X"
-                android:background="@color/none"
-                android:layout_alignTop="@id/noteEditField"
-                android:layout_marginTop="-10dip"
+                android:layout_width="35dip"
+                android:layout_height="35dip"
+                android:background="@drawable/close"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"/>
 </RelativeLayout>
