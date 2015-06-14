@@ -24,7 +24,9 @@ public class CustomFontButton extends Button {
     }
 
     private void setCustomFont(CustomFontButton customFontButton, Context context) {
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "CaviarDreams_Bold.ttf");
-        customFontButton.setTypeface(font);
+        if(!isInEditMode()) {
+            Typeface font = Typeface.createFromAsset(context.getAssets(), "CaviarDreams_Bold.ttf");
+            customFontButton.setTypeface(font);
+        }
     }
 }

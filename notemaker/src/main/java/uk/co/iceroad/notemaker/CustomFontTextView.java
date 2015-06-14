@@ -25,7 +25,9 @@ public class CustomFontTextView extends TextView {
     }
 
     private void setCustomFont(CustomFontTextView customFontButton, Context context) {
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "CaviarDreams.ttf");
-        customFontButton.setTypeface(font);
+        if(!isInEditMode()) {
+            Typeface font = Typeface.createFromAsset(context.getAssets(), "CaviarDreams.ttf");
+            customFontButton.setTypeface(font);
+        }
     }
 }

@@ -25,7 +25,9 @@ public class CustomFontEditText extends EditText {
     }
 
     private void setCustomFont(CustomFontEditText customFontButton, Context context) {
-        Typeface font = Typeface.createFromAsset(context.getAssets(), "CaviarDreams.ttf");
-        customFontButton.setTypeface(font);
+        if(!isInEditMode()) {
+            Typeface font = Typeface.createFromAsset(context.getAssets(), "CaviarDreams.ttf");
+            customFontButton.setTypeface(font);
+        }
     }
 }
