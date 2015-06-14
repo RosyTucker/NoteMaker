@@ -1,51 +1,41 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout_root"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:padding="10dp" >
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dialog"
+                android:background="@color/white"
+                android:orientation="vertical">
 
     <uk.co.iceroad.notemaker.CustomFontEditText
-            android:id="@+id/noteEditText"
+            android:layout_margin="10dip"
+            android:id="@+id/noteEditField"
             android:layout_width="match_parent"
             android:layout_height="150dip"
-            android:background="@color/white"
+            android:padding="5dip"
             android:textSize="@dimen/normalFontSize"
-            android:layout_gravity="top"
-            android:inputType="textMultiLine|textCapSentences" >
+            android:inputType="textMultiLine|textCapSentences"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
     </uk.co.iceroad.notemaker.CustomFontEditText>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dip"
-        android:orientation="horizontal" >
+    <uk.co.iceroad.notemaker.CustomFontButton
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_margin="10dip"
+            android:layout_below="@id/noteEditField"
+            android:background="@drawable/yellow_button"
+            android:text="@string/save"
+            android:textSize="@dimen/normalFontSize"
+            android:textColor="@color/white"
+            android:layout_gravity="bottom"/>
 
-        <uk.co.iceroad.notemaker.CustomFontButton
-                android:id="@+id/cancelButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dip"
-                android:layout_weight="0.5"
-                android:layout_marginEnd="2dip"
-                android:layout_marginRight="2dip"
-                android:textSize="@dimen/normalFontSize"
-                android:background="@drawable/yellow_button"
-                android:text="@string/cancel"
-                android:textColor="@color/white"
-                android:layout_gravity="bottom"/>
-
-        <uk.co.iceroad.notemaker.CustomFontButton
-                android:id="@+id/saveButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dip"
-                android:background="@drawable/yellow_button"
-                android:text="@string/save"
-                android:layout_weight="0.5"
-                android:textSize="@dimen/normalFontSize"
-                android:layout_marginStart="2dip"
-                android:layout_marginLeft="2dip"
-                android:textColor="@color/white"
-                android:layout_gravity="bottom"/>
-    </LinearLayout>
-
-</LinearLayout>
+    <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:background="@drawable/close"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+</RelativeLayout>

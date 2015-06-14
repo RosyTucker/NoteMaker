@@ -52,12 +52,12 @@ public class MainActivity extends Activity {
 
     private void showAddNoteDialog() {
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.add_note_dialog, (ViewGroup) findViewById(R.id.layout_root));
+        View layout = inflater.inflate(R.layout.add_note_dialog, (ViewGroup) findViewById(R.id.dialog));
 
         final AlertDialog newNoteDialog =  new AlertDialog.Builder(this).setView(layout).create();
         newNoteDialog.show();
 
-        final EditText noteEditText = (EditText) newNoteDialog.findViewById(R.id.noteEditText);
+        final EditText noteEditText = (EditText) newNoteDialog.findViewById(R.id.noteEditField);
         Button saveButton =(Button) newNoteDialog.findViewById(R.id.saveButton);
         Button cancelButton = (Button) newNoteDialog.findViewById(R.id.cancelButton);
 
