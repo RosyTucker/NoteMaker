@@ -9,6 +9,7 @@
             android:id="@+id/noteTextView"
             android:layout_width="fill_parent"
             android:background="@color/none"
+            android:textSize="@dimen/normalFontSize"
             android:layout_height="wrap_content"
             android:minLines="3" />
 
